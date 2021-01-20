@@ -1,11 +1,6 @@
 # Ansible Role: port_scan_facts
 
-Scan destination TCP ports.  The resulting facts contain the round-trip-time for the TCP connection.  A duration of -1 indicates a failed connection.
-
-## Requirements
-
-Name resolution of d_ip is not supplied
-Network connectivity to be able to test latency to various IP addresses
+Scan destination TCP ports.  The resulting facts contain the round-trip-time for the TCP connection.  A duration of -1 indicates a failed connection.  A custom module is used to time a TCP connect (send SYN packet, get SYN-ACK).
 
 ## Role Variables
 
@@ -55,10 +50,6 @@ Ansible task:
 
 
 ```
-
-## Custom module
-
-This role includes a custom module in the `library` directory.
 
 ## Testing
 

@@ -1,0 +1,26 @@
+---
+- name: Converge
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Include role to scan ports
+      include_role:
+        name: port_scan_facts
+      vars:
+        destinations:
+          - name: Google
+            d_host: www.google.com
+            d_port: 443
+          - name: Microsoft
+            d_host: www.microsoft.com
+            d_port: 443
+
+    - name: print port scan facts
+      debug:
+        var: port_scan_facts
+
+    - name: write facts to local file for test_infra analysis
+      copy:
+        content: "{{ port_scan_facts | to_nice_yaml }}"
+        dest: /tmp/port_scan_facts
+        mode: 0640

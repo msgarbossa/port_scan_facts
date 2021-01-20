@@ -1,0 +1,5 @@
+---
+
+- name: Test connectivity
+  port_scan_facts:
+    destinations: "{{ destinations }}"

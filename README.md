@@ -6,7 +6,7 @@ Scan destination TCP ports.  The resulting facts contain the round-trip-time for
 
 | Variable                | Choices/Defaults | Purpose/Description                                                                     |
 | ----------------------- | ---------------- | --------------------------------------------------------------------------------------- |
-| destinations            | []               | list of dictonaries with keys for name, d_host and/or d_ip, and d_port                  |
+| destinations            | []               | list of dictionaries with keys for name, d_host and/or d_ip, and d_port                  |
 
 ## Role Dependencies
 
@@ -53,6 +53,16 @@ Ansible task:
 ```
 molecule test
 ```
+
+## Future Improvements
+
+- Allow failures when port checks fail
+- Ability to define failure groups
+  - failure_group ID defined for each item in list?
+  - look for lists of lists and ensure minimum of 1 item passes?
+- Result format
+  - simple (current)
+  - verbose (dictionary result per item) to more easily allow parsing of results
 
 ## License
 

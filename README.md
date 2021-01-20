@@ -40,15 +40,12 @@ Scan destination TCP ports.  The resulting facts contain the round-trip-time for
 
 Ansible task:
 
-```yaml
+```json
 
     "port_scan_facts": {
         "www.google.com:443": 63,
         "www.microsoft.com:443": 65
     }
-}
-
-
 ```
 
 ## Testing
